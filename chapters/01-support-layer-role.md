@@ -192,28 +192,32 @@ S1     One-pass with a polymer flash before each          Ch. 3, 5, 6, 10–12
        nitride step and a pulsed OX step (reference)
 S2     Sequential and self-aligned: SN1; partial HF       Ch. 7, 13, 14
        dip; dry; SN2 through the top-support openings;
-       second dip
+       second dip (variants S2A and S2D)
 S3     S2 extended to three supports                      Ch. 14
 P      Pre-opened middle support, patterned before the    Ch. 14
        upper oxide is deposited
 ```
 
-S0 and S1 cut the whole column, nitride, oxide, nitride, and landing, in one plasma pass before any HF. The pass is deep (about 920 nm of film, with the mask 1220 nm), and its mask budget leaves 47 nm of a 300 nm carbon mask. S2 cuts only the top support, lets HF remove the upper oxide, and then cuts the middle support through the top-support openings from above, in a cavity from which all the upper oxide is gone. It removes the oxide step from the plasma, and with it about half of the TiN top loss and most of the mask budget problem. It exposes the free upper half of every pillar to the plasma, and it costs a second dry. Chapter 14 weighs the trade quantitatively.
+S0 and S1 cut the whole column, nitride, oxide, nitride, and landing, in one plasma pass before any HF. The pass is deep (about 920 nm of film, with the mask 1220 nm), and its mask budget leaves 47 nm of a 300 nm carbon mask. S2 cuts only the top support, lets HF remove the upper oxide, and then cuts the middle support through the top-support openings from above, in a cavity from which all the upper oxide is gone. It removes the oxide step from the plasma, and with it 70% of the TiN top loss (2.25 of 3.2 nm) and most of the mask budget problem. It exposes the free upper half of every pillar to the plasma, needs a support film that resists HF, and costs a second dip and dry. Chapter 14 weighs the trade quantitatively.
 
 ### 1.4.2 What Each Route Gives and Costs
 
 ```
 Route comparison (reference array, illustrative; derived in Ch. 3, 6, 13, 14, 16):
-                      S0        S1        S2
-Plasma time           195 s     226 s     ≈ 75 s
-Mask (ACL)            300 nm    300 nm    160 nm
-ACL margin            47 nm     47 nm     57 nm
-TiN top loss          5.0 nm    3.2 nm    1.0 nm
-TiN sidewall dose     crescents crescents upper pillar surface
-Support loss in HF    1.8 nm    1.8 nm    3 nm (fast upper oxide)
-Dips and dries        1         1         2
-Module cost           ref       +$0.5     +$7 (two dips and dries)
+                       S0         S1         S2A        S2D
+Plasma time            195 s      226 s      183 s      118 s
+Mask (ACL)             300 nm     300 nm     220 nm     220 nm
+ACL margin             47 nm      47 nm      57 nm      57 nm
+TiN top loss           5.0 nm     3.2 nm     1.3 nm     1.8 nm
+Sidewall exposure      —          —          upper half of every pillar (≈ 1% of C_s)
+Support film           PECVD SiN  PECVD SiN  SiCN       SiCN
+Nitride loss per wall  1.75 nm    1.75 nm    1.18 nm    1.18 nm
+Dips and dries         1          1          2          2
+Lithography            ArF-i      ArF-i      ArF-i      EUV or double
+Module cost            $16.6      $17.5      $27.6      $56.2
 ```
+
+S2A and S2D differ in how they keep the free pillars of the second nitride step from pulling in (Chapter 13): S2A keeps the ArF-i lattice and cuts the ion flux to 16%, S2D touches every pillar with a finer lattice.
 
 ---
 
@@ -297,10 +301,10 @@ S1 (this book's one-pass reference):
   SN1 44 s | OX 129 s | SN2 24 s | LAND 29 s = 226 s
   TiN top loss 3.2 nm
 
-S2 (sequential reference):
-  ACL 160 nm retained through dip 1 and SN2
-  SN1 44 s | dip 1 (fast upper oxide) | dry | SN2 ≈ 31 s | ACL strip | dip 2 | dry
-  TiN top loss ≈ 1.0 nm
+S2D (sequential reference; SiCN supports, PSG upper oxide, every pillar touched):
+  ACL 220 nm retained through dip 1 and SN2
+  SN1 76.7 s | dip 1 (178 s) | dry | SN2 41.7 s (600 eV) | ACL strip | dip 2 (105 s) | dry
+  plasma 118 s; TiN top loss 1.8 nm
 ```
 
 ---
