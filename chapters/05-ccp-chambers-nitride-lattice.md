@@ -33,7 +33,7 @@ Support layer etch, chamber requirements (reference; S1):
 Four requirements go beyond the oxide step:
 
 1. **The polymer film is the process variable.** In the nitride steps, rate and selectivity follow exp(−d/λ) (Chapter 3). A 10% change in film thickness at 3.4 nm moves the SiN rate by 20% and the TiN rate by 30%. The chamber must hold the film to within 0.1 nm, which means holding the polymer arrival rate and the wall state.
-2. **Narrow ion energies at modest power.** A tailored-waveform bias needs a generator that can produce a defined waveform into a plasma load at 400 eV mean energy.
+2. **A stable mean ion energy.** The nitride steps run at 400 eV with a sinusoidal 2 MHz bias; the mean must hold to ± 5%, because the rate follows it (Chapter 6).
 3. **Fast, clean switching.** The flash is a 4 s step. A 2 s gas settle on a 4 s step would be half the step.
 4. **Temperature within 1 K.** Chapter 3's table: 20 K shifts the TiN rate by 74%, or 3.7% per kelvin.
 
@@ -64,12 +64,12 @@ Frequency    Period    τ_i/τ_RF    Ion response               IEDF
 
 High frequency dissociates gas and makes density, with little ion energy; low frequency delivers energy and a broad distribution. That is why a CCP has a 60 MHz source on the upper electrode and a 2 MHz bias on the lower. The S0 nitride step uses the 2 MHz bias at about 1.4 kW. The ± 50% distribution of Chapter 3 is its IEDF.
 
-### 5.2.2 The Tailored Waveform
+### 5.2.2 The Tailored Waveform (Optional)
 
 A bias with an arbitrary waveform can narrow the distribution. The mechanism is that the ion energy is set by the sheath voltage at the moment of crossing; if the sheath voltage is held constant during the crossing, the ions arrive with one energy. A ramp that compensates the sheath capacitor's charging between pulses does that:
 
 ```
-Tailored-waveform bias (S1 nitride steps, reference):
+Tailored-waveform bias (optional; not used in the S1 reference):
   Repetition rate           400 kHz
   Waveform                  pulsed negative with a positive-going compensating ramp
   Mean ion energy           ≈ 400 eV
@@ -77,11 +77,11 @@ Tailored-waveform bias (S1 nitride steps, reference):
   Power                     ≈ 1.2 kW  (below the 1.4 kW of the sinusoid for the same mean energy)
 ```
 
-Chapter 3 showed that the narrow distribution does not change the SiN:TiN selectivity in this model, and Chapter 6 shows that it changes neither the mask erosion nor the column profile at these energies. Its one real benefit is a smaller sheath-voltage swing, which reduces the charging of floating pillars (Chapter 13).
+Chapter 3 showed that the narrow distribution does not change the SiN:TiN selectivity in this model, Chapter 6 shows that it changes neither the mask erosion nor the column profile at these energies, and Chapter 13 shows that it does not change the charging of the pillars. **No benefit has been found for it in this book.** S1 runs its nitride steps with the sinusoidal bias, and the generator is an optional upgrade that this chapter describes for completeness.
 
 ### 5.2.3 Pulsing
 
-The OX and LAND steps of S1 pulse the bias at 10 kHz, 80% duty. During the off-time the plasma density decays by a factor of about 0.7 and the pillar tops discharge toward the plasma potential (Chapter 13). The price is time: the OX rate falls by 15% (110 to 129 s), and LAND (25 to 29 s). Chapter 6 gives the trade quantitatively.
+The OX and LAND steps of S1 pulse the bias at 10 kHz, 80% duty. During the off-time the plasma density decays by a factor of about 0.7 and the charge on the oxide column floor relaxes. (The pillars, with a charging time of seconds, are not relieved by it; Chapter 13.) The price is time: the OX rate falls by 15% (110 to 129 s), and LAND (25 to 29 s). Chapter 6 gives the trade quantitatively.
 
 ---
 
@@ -143,18 +143,18 @@ Because SN2 must follow OX in a one-pass route, no chamber split removes the mem
 ## 5.4 The Full S1 Recipe
 
 ```
-S1 recipe (CCP, 60 MHz source / 2 MHz or tailored bias; illustrative):
+S1 recipe (CCP, 60 MHz source / 2 MHz bias; illustrative):
 
 Step   Gases (sccm)                      P        Source    Bias            Time
 ─────────────────────────────────────────────────────────────────────────────────────
 FL1    CH₃F 40, Ar 300                   20 mTorr 0.6 kW    none            4 s
-SN1    CH₂F₂ 20, CF₄ 25, O₂ 18, Ar 300   25       1.8 kW    tailored 400 eV 40 s
+SN1    CH₂F₂ 20, CF₄ 25, O₂ 18, Ar 300   25       1.8 kW    2 MHz 400 eV    40 s
   (switch, 2 s, no plasma bias)
 OX     C₄F₆ 15, O₂ 30, Ar 400            20       2.2 kW    2 MHz pulsed    129 s
                                                             600 eV, 80%, 10 kHz
   (switch, 2 s)
 FL2    CH₃F 40, Ar 300                   20       0.6 kW    none            4 s
-SN2    CH₂F₂ 20, CF₄ 25, O₂ 18, Ar 300   25       1.8 kW    tailored 400 eV 20 s
+SN2    CH₂F₂ 20, CF₄ 25, O₂ 18, Ar 300   25       1.8 kW    2 MHz 400 eV    20 s
   (switch, 2 s)
 LAND   C₄F₆ 12, O₂ 28, Ar 400            20       1.8 kW    2 MHz pulsed    29 s
                                                             500 eV, 80%, 10 kHz
@@ -271,7 +271,7 @@ The nitride steps make HCN and cyanogen at tens of ppm in the exhaust. CH₃F an
 
 1. **The polymer film is the process variable.** 10% in thickness moves SiN by 20% and TiN by 30%; the chamber must hold it to 0.1 nm.
 
-2. **The frequency decides the IEDF.** τ_i/τ_RF of 0.6 at 2 MHz gives a bimodal ± 50% distribution; a tailored waveform narrows it to ± 15%.
+2. **The frequency decides the IEDF.** τ_i/τ_RF of 0.6 at 2 MHz gives a bimodal ± 50% distribution; a tailored waveform narrows it to ± 15% and buys nothing in this process.
 
 3. **The chamber remembers.** The OX polymer on the walls and on the pillar tops gives SN2 a starting film between 0 and 1.6 nm, and an SN2 TiN loss that varies between 0.35 and 1.06 nm from chamber to chamber.
 

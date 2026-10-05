@@ -4,7 +4,7 @@
 
 Every recipe offers the same set of knobs: how hard to hit the wafer, whether to pulse, how warm to keep it, how much polymer to make, how long to wait. Engineers adjust them in this order of habit. The model of Chapter 3 allows the habit to be checked, and the result is not what habit expects. In the support layer etch, **once a polymer flash has been placed before each nitride step, the TiN loss is almost indifferent to every other lever**. Ion energy, distribution width, wafer temperature, polymer thickness, and duty cycle change the nitride rate, the mask consumption, the clearing time, and the throughput. They hardly change the TiN loss, which is set by the flash.
 
-This chapter works through each lever with the model, states what each one buys, and ends with a sensitivity table at constant nitride cleared that tells an engineer where the process window is wide and where it is narrow. It also corrects an expectation: the tailored waveform's value is not selectivity but charging, and charging matters most in the route where the pillars are free-standing.
+This chapter works through each lever with the model, states what each one buys, and ends with a sensitivity table at constant nitride cleared that tells an engineer where the process window is wide and where it is narrow. It also corrects an expectation: the tailored waveform, which an engineer reaches for first, has no benefit here.
 
 **Learning Objectives:**
 - Compute the effect of mean ion energy on rate, selectivity to TiN and ACL, step time, and mask use
@@ -22,9 +22,10 @@ Lever                  Moves strongly                 Moves little
 ──────────────────────────────────────────────────────────────────────────────────
 Polymer flash          TiN transient loss (−1.4 nm)   rate, mask
 Mean ion energy        rate, step time, mask          TiN loss (with flash)
-IEDF width             nothing in selectivity;        rate (±1.5%)
-                       charging swing (Ch. 13)
-Pulse duty             rate (OX, SN), time, charging  TiN loss
+IEDF width             nothing                        rate (±1.5%), selectivity,
+                                                      mask, charging (Ch. 13)
+Pulse duty             rate (OX, SN), time,           TiN loss, pillar charging
+                       oxide column charging
 Wafer temperature      rate (2%/K), step time         TiN loss (with flash)
 O₂ flow (film d₀)      rate (−3% per sccm)            TiN loss (with flash)
 Number of steps in     TiN transients (one per step   —
@@ -81,9 +82,9 @@ The reason is the yield function. Rates follow √E − √E_th, which is concav
 
 ### 6.3.2 What the Waveform Is For
 
-Two effects remain. The first is the **sheath voltage swing**. A sinusoidal bias at 2 MHz swings the sheath voltage through about 1 kV peak to peak; a tailored waveform holds it almost constant through the ion crossing. The pillar tops are floating conductors coupled to the plasma through a capacitance of order a femtofarad. A smaller swing means a smaller rectified potential on them and a smaller potential difference between pillars of the two classes of Chapter 1. Chapter 13 develops this. The second is the **ion angular spread** at the column bottom for ions at the low end of the distribution; at 200 eV and above it is below 2° and does not matter at AR 17.
+Two effects might have justified it. The first is the **sheath voltage swing**: a sinusoidal bias at 2 MHz swings the sheath through about 1 kV peak to peak, and a tailored waveform holds it almost constant through the ion crossing. If the swing charged the pillars, the narrower waveform would help. It does not: the pillars are part of the wafer and see the same RF bias, and the potential difference between a touched and an untouched pillar is a DC difference set by their ion currents (Chapter 13). The second is the **ion angular spread** at the column bottom for ions at the low end of the distribution. At 200 eV and above it is below 2° and does not matter at aspect ratio 17.
 
-The consequence is that the tailored waveform is a charging control, not a selectivity control. In S0 and S1, where the pillars are embedded in oxide, it is optional: a sinusoidal 2 MHz bias with flash gives a TiN loss within 0.01 nm of the tailored one. In S2, where the upper half of every pillar stands free during SN2, it is needed (Chapter 13).
+The consequence is blunt. In this process the tailored waveform is neither a selectivity control, nor a mask control, nor a profile control, nor a charging control. A sinusoidal 2 MHz bias with a flash gives a TiN loss within 0.01 nm of the tailored one. **S1 does not use it.** It would be a different answer for a process in which the TiN threshold lies inside the distribution, or at much lower mean energies, and the model of Section 6.3.1 is the way to check.
 
 ---
 
@@ -123,7 +124,7 @@ The pulse frequency sets the off-time. With plasma density decaying with a time 
  1 kHz, 80% duty:    off-time 200 µs; plasma essentially extinguished (0.04); re-ignition each pulse
 ```
 
-At 10 kHz the plasma persists; it is the bias that is modulated. At 1 kHz each pulse re-ignites the plasma, with a voltage overshoot that is a large and non-reproducible ion-energy excursion. S1 pulses the OX and LAND steps at 10 kHz and 80% duty. The reason is the pillars: the 20 µs off-time lets the sheath collapse and the floating pillar tops discharge toward the plasma potential (Chapter 13), and it reduces the column offset that Book #30 attributes to charging.
+At 10 kHz the plasma persists; it is the bias that is modulated. At 1 kHz each pulse re-ignites the plasma, with a voltage overshoot that is a large and non-reproducible ion-energy excursion. S1 pulses the OX and LAND steps at 10 kHz and 80% duty. The reason is the oxide column: the 20 µs off-time lets the sheath collapse and the charge on the column floor and walls relax, which reduces the column offset that Book #30 attributes to charging. The pillars, with a charging time of seconds, are not relieved by it (Chapter 13).
 
 ### 6.4.3 What to Pulse
 
@@ -214,7 +215,7 @@ Order of tuning (DOE strategy):
   3. Wafer temperature (ESC): trims the rate across the wafer; keep within ± 1 K.
   4. Mean energy: trade mask margin against time; stay at 300–400 eV.
   5. Pulsing: only where charging or column offset demands it (OX, LAND; SN steps in S2).
-  6. IEDF width: choose for charging (Ch. 13), not for selectivity.
+  6. IEDF width: leave it alone; no benefit has been found for a narrow distribution.
 ```
 
 ---
@@ -225,7 +226,7 @@ Order of tuning (DOE strategy):
 
 2. **Energy trades mask for time.** 400 to 200 eV saves 14 nm of ACL and 0.19 nm of TiN and lengthens the nitride etch by 55%.
 
-3. **The width of the distribution does not matter for selectivity.** The yield function is concave and the TiN threshold is below either distribution; the benefit of a tailored waveform is the sheath voltage swing, which matters for floating pillars.
+3. **The width of the distribution does not matter.** The yield function is concave and the TiN threshold is below either distribution; the tailored waveform has no benefit for selectivity, mask, profile, or charging, and S1 does not use it.
 
 4. **Pulsing buys selectivity with rate.** 6% for 15% rate at 80% duty. S1 pulses OX and LAND at 10 kHz, 80%.
 

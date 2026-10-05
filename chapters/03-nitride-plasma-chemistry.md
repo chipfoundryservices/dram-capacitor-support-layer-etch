@@ -75,20 +75,20 @@ Hydrogen does three things in a nitride etch:
 ```
 Support layer etch recipes, nitride steps (CCP, 60 MHz source / 2 MHz bias; illustrative):
 
-                         SN1 / SN2 (S0)         SN1 / SN2 (S1)         FLASH (S1)
-  Gases (sccm)           CH₂F₂ 20, CF₄ 25,      CH₂F₂ 20, CF₄ 25,      CH₃F 40, Ar 300
-                         O₂ 18, Ar 300          O₂ 18, Ar 300
-  Pressure               25 mTorr               25 mTorr               20 mTorr
-  Source power           1.8 kW                 1.8 kW                 0.6 kW
-  Bias                   2 MHz, 1.4 kW          tailored waveform      none
-                         (≈ 400 eV, broad)      (≈ 400 eV, ± 15%)
-  Wafer temperature      40 °C                  40 °C                  40 °C
-  Time                   SN1 40 s, SN2 20 s     SN1 40 s, SN2 20 s     4 s before each
-  SiN rate               ≈ 225 nm/min           ≈ 225 nm/min           —
-  Polymer on TiN         3.4 nm steady state    3.4 nm steady state    1.6 nm in 4 s
+                         SN1 / SN2 (S0 and S1)           FLASH (S1 only)
+  Gases (sccm)           CH₂F₂ 20, CF₄ 25,               CH₃F 40, Ar 300
+                         O₂ 18, Ar 300
+  Pressure               25 mTorr                        20 mTorr
+  Source power           1.8 kW                          0.6 kW
+  Bias                   2 MHz, 1.4 kW                   none
+                         (≈ 400 eV, ± 50%)
+  Wafer temperature      40 °C                           40 °C
+  Time                   SN1 40 s, SN2 20 s              4 s before each
+  SiN rate               ≈ 225 nm/min                    —
+  Polymer on TiN         3.4 nm steady state             1.6 nm in 4 s
 ```
 
-SN1 and SN2 are the nitride steps of Book #30's recipe. The tailored waveform and the flash are what S1 adds.
+SN1 and SN2 are the nitride steps of Book #30's recipe. The flash is what S1 adds.
 
 ### 3.2.3 Effluent
 
@@ -186,7 +186,7 @@ Steady-state rates and SiN:TiN versus mean ion energy (d₀ = 3.4 nm, continuous
 Two conclusions:
 
 1. **Energy is a weak lever.** Halving the mean energy from 400 to 200 eV raises the steady SiN:TiN by 16% (294 to 341) and costs 36% of the SiN rate. Going to 100 eV gains 60% in selectivity at a loss of 61% of the rate.
-2. **The width of the distribution does not matter for TiN.** The TiN threshold (45 eV) lies below the whole range of ion energies in this process, so tails above the mean do not add disproportionately to TiN loss. A tailored waveform with a narrow distribution gives the same selectivity as a broad one. Its benefit lies elsewhere: a smaller voltage swing on the floating pillars (Chapters 6 and 13).
+2. **The width of the distribution does not matter for TiN.** The TiN threshold (45 eV) lies below the whole range of ion energies in this process, so tails above the mean do not add disproportionately to TiN loss. A tailored waveform with a narrow distribution gives the same selectivity as a broad one, and Chapters 6 and 13 show that it has no benefit in this process in mask erosion, profile, or charging either.
 
 This is a result of the model's threshold assumptions. A TiN with a higher effective threshold (heavily fluorinated, 80–100 eV) would make the energy lever steeper, and Chapter 6 treats the uncertainty.
 

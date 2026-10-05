@@ -106,20 +106,24 @@ An opening that is partly closed by residue, undersized by taper, or later narro
 
 ### 1.2.3 The Door Gets Smaller
 
-Every conformal film grows on the opening wall as well as on the pillars. Starting from the opening at the top and middle supports:
+Every conformal film grows on every wall of the opening, the nitride wall and the TiN crescents alike. The free path through the sheet is the **clover**: the circle minus the three TiN crescents. Its narrowest dimension is the circle inscribed between the three pillars, 2 × (26 nm − r_pillar):
 
 ```
-Opening width at each stage (reference S0 numbers, illustrative):
-                                          Top support     Middle support
-  Etched (after strip)                      50.0 nm          44 nm
-  After dip-out (nitride loss 1.8 / 1.3     53.6 nm          46.6 nm
-    nm per wall)
-  After ZAZ (5.5 nm on each wall)           42.6 nm          35.6 nm
-  After top-electrode TiN (5 nm each wall)  32.6 nm          25.6 nm
-  Free width for the plate fill             ≈ 33 nm          ≈ 26 nm
+Free path through the opening (reference S0 numbers, illustrative):
+                                             Top support     Middle support
+                                             (pillar 32 nm)  (pillar 30 nm)
+  Etched circle (after strip)                50 nm           44 nm
+  Free area of the clover (circle − crescents)  1013 nm²     938 nm²
+  Inscribed free diameter (between 3 pillars)   20 nm        22 nm
+  After dip-out (nitride wall loss 1.8 / 1.3 nm per wall):
+    free area                                1132 nm²        1017 nm²
+  After ZAZ (5.5 nm on every wall):
+    free area                                230 nm²         282 nm²
+    inscribed free diameter                  9 nm            11 nm
+  After top-electrode TiN (5 nm):            closed (−1 nm)  closed (+1 nm, pinched)
 ```
 
-Plate fill through a slot 26 nm wide and 50 nm long is not a trivial CVD problem; a SiGe fill needs about 20 nm of clear width at its narrowest point to close without a void. The specification of at least 40 nm for the middle-support opening comes from this table, not only from the needs of the HF.
+The opening is no narrower than the interstitial channel between three pillars that runs the full height of the forest, and it closes when that channel does. What the nitride opening adds is the **lobes** of free area between pairs of pillars, and it is their area that matters for the steps that precede the top electrode: the HF, the rinse and drying fluid, and the ZAZ precursors. At the middle support the free area of the clover is 938 nm² at an etched diameter of 44 nm and falls to 829 nm² at the specification limit of 40 nm. Below that limit the HF has less area through which to reach the lower oxide, and the ZAZ less area through which to reach the lower half of every pillar. The top electrode is deposited into a door that closes as the film grows, so the lower half of each pillar receives its TiN through an area that is falling toward zero. That is a conformality problem for the electrode deposition and is not treated in this book.
 
 ### 1.2.4 The Pillars the Plasma Never Sees
 
@@ -184,8 +188,8 @@ Route  How                                               Where treated
 ─────────────────────────────────────────────────────────────────────────────────────
 S0     One-pass plasma: SN1, OX, SN2, LAND in one         Book #30; baseline here
        chamber (Book #30's recipe)
-S1     One-pass, nitride steps rebuilt: polymer flash,    Ch. 3, 5, 6, 10–12
-       tailored-waveform bias, pulsed OX step (reference)
+S1     One-pass with a polymer flash before each          Ch. 3, 5, 6, 10–12
+       nitride step and a pulsed OX step (reference)
 S2     Sequential and self-aligned: SN1; partial HF       Ch. 7, 13, 14
        dip; dry; SN2 through the top-support openings;
        second dip
@@ -245,15 +249,15 @@ Support layer etch specification (reference, illustrative):
 Parameter                                  Target                 Protects against
 ─────────────────────────────────────────────────────────────────────────────────────────
 Opening CD, top support, after strip       50 ± 3 nm (3σ)        HF access, lattice strength
-Opening CD, middle support                 ≥ 40 nm               plate-fill door (§1.2.3),
-                                                                  HF access to the lower oxide
+Opening CD, middle support                 ≥ 40 nm               HF access to the lower oxide;
+  (free area ≥ 830 nm²)                                            ALD access to the lower pillar half
 Overlap depth into nearest pillar          ≤ 20 nm               TiN exposure, weakened collar
 Top-support remaining after etch           ≥ 116 nm              tie stiffness (loss ≤ 4 nm)
 Middle-support remaining                   ≥ 46 nm               tie stiffness
 TiN pillar-top loss                        ≤ 5 nm (S1 ≤ 3.5)     capacitance, seam opening
 TiN crescent wall loss (lateral)           ≤ 2 nm                capacitance, dielectric leakage
-Residual nitride at the middle-support     none ≥ 3 nm wide      blocked HF access
-  opening
+Nitride fin at the middle-support          99.9th percentile      blocked HF access (a continuous
+  corners                                   ≤ 4 nm; no film        film blocks; a fin does not)
 Landing depth into BPSG                    50–150 nm              mask, bottom-stop distance
 Random not-open openings (independent)     ≤ 1 × 10⁻⁴            killer clusters (§4.4)
 Killer clusters (≥ 3 adjacent not-open)    < 0.01 per die         stranded oxide, low C_s
@@ -288,7 +292,7 @@ S0 (Book #30's recipe, CCP 60 MHz / 2 MHz, ≈ 400–600 eV):
   TiN top loss 5.0 nm; ACL used 253 nm of 300
 
 S1 (this book's one-pass reference):
-  4 s polymer flash before SN1 and SN2; tailored-waveform bias on the SN steps;
+  4 s polymer flash before SN1 and SN2; sinusoidal 2 MHz bias on the SN steps;
   OX and LAND pulsed (10 kHz, 80%)
   SN1 44 s | OX 129 s | SN2 24 s | LAND 29 s = 226 s
   TiN top loss 3.2 nm
@@ -305,7 +309,7 @@ S2 (sequential reference):
 
 1. **The support layer is a perforated nitride sheet.** 120 nm on top, 50 nm in the middle, 39–46% solid after the opening, holding 17 billion pillars through every wet step.
 
-2. **The opening is the only door.** About 4.25 × 10⁹ per layer per die; every plasma, wet, and deposition step reaches the pillars through them. After ZAZ and top electrode the door is 33 nm at the top support and 26 nm at the middle.
+2. **The opening is the only door.** About 4.25 × 10⁹ per layer per die; every plasma, wet, and deposition step reaches the pillars through them. After ZAZ the free area is 20–28% of its etched value, and the top electrode closes it.
 
 3. **One pillar in four is never exposed to the plasma.** The lattice touches 75% of pillars, once each. The array is a strict 3:1 pattern of two kinds of cell.
 
@@ -321,7 +325,7 @@ S2 (sequential reference):
 
 2. A 1c-class array has F = 15 nm, cells of 1350 nm², a 16 Gb die, and an opening lattice at twice the pillar pitch. How many openings per layer per die, and how many per cm² of array?
 
-3. Using the table in Section 1.2.3, compute the free width for the plate fill if ZAZ thickens to 6.2 nm and the top electrode to 6 nm. Is a middle-support opening of 40 nm still adequate if HF loss is 1.3 nm per wall?
+3. Using Section 1.2.3, find the inscribed free diameter at the top support after a ZAZ of 6.2 nm. At what ZAZ thickness does the opening close at the top support? (Inscribed diameter = 2 × (26 − 16 − t) nm.)
 
 4. Show that an opening lattice at exactly twice the pillar pitch touches 75% of the pillars (hint: count pillars in one 2 × 2 supercell that lie within 41 nm of the centroid of one of its two triangles). What fraction would be touched if the openings were centred on pillars instead of interstitial sites?
 

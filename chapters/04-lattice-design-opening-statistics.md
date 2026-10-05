@@ -8,7 +8,7 @@ The chapter ends with the other side of the design window. Openings that are too
 
 **Learning Objectives:**
 - List the parameters of an opening lattice and the constraints that bound each
-- Compare five lattice designs on open fraction, TiN exposure, pillars touched, solid fraction, and door size
+- Compare five lattice designs on open fraction, TiN exposure, pillars touched, solid fraction, and free area
 - Compute the overlap depth at 3σ from CD and overlay budgets
 - Derive the reach of the HF dip and the critical cluster size of failed openings
 - Compute the failure probability per opening that a given dip time tolerates
@@ -24,7 +24,7 @@ The chapter ends with the other side of the design window. Openings that are too
 ```
 Lattice parameters:            Bounded by:
   pitch P                       HF reach (Section 4.4); lithography; fracture
-  opening size D                door after coatings (≥ 40 nm at the middle support);
+  opening size D                free area at the middle support (≥ 830 nm², D ≥ 40 nm);
                                 ligament stress; TiN exposure
   placement on the pillar       overlap depth into pillars; overlay
     lattice
@@ -72,11 +72,11 @@ Layout (top support, pillars 32 nm, centre-to-axis 26 nm):
 
 **A is the reference** and a compromise. At 90 nm hexagonal pitch it is close to the limit of single-exposure ArF immersion for hole arrays. It exposes 25% fewer pillars to plasma than a lattice that touched them all, and its 28% open fraction leaves 39% of the sheet as solid nitride.
 
-**B (larger openings, same pitch)** adds only 3 nm of door width, cuts the solid fraction by 3 points, and raises the overlap depth by 3 nm. It exposes more TiN and weakens the lattice for a small gain in access.
+**B (larger openings, same pitch)** adds only 97 nm² of free area at the top support (1110 against 1013 nm²), cuts the solid fraction by 3 points, and raises the overlap depth by 3 nm. It exposes more TiN and weakens the lattice for a small gain in access.
 
-**C (a rotated, finer lattice)** is different in kind. Every pillar is touched exactly once, so there are no untouched cells and no two-class pattern (Chapter 11). There are 33% more openings, so the lattice is more redundant (Section 4.4). Its cost is lithographic: a 78 nm hexagonal pitch of 44 nm holes is below the single-exposure limit and needs EUV or a double pattern, with the overlay penalty that follows. The smaller opening (44 nm at the top, about 38 nm at the middle support) fails the 40 nm door specification of Chapter 1.
+**C (a rotated, finer lattice)** is different in kind. Every pillar is touched exactly once, so there are no untouched cells and no two-class pattern (Chapter 11). There are 33% more openings, so the lattice is more redundant (Section 4.4). Its cost is lithographic: a 78 nm hexagonal pitch of 44 nm holes is below the single-exposure limit and needs EUV or a double pattern, with the overlay penalty that follows. The smaller opening (44 nm at the top, about 38 nm at the middle support, free area 778 nm²) fails the 40 nm specification of Chapter 1.
 
-**D** repairs C's door at the cost of a 34% solid fraction and 37% open area.
+**D** repairs C's free area at the cost of a 34% solid fraction and 37% open area.
 
 **E (a coarse lattice)** touches only a third of the pillars and halves the openings per die, which eases lithography and the etch count. The farthest oxide is 46 nm from an opening edge, so the dip must run 70% longer to clear the same oxide, and the overlap depth of 22 nm exceeds the 20 nm limit.
 
@@ -240,7 +240,7 @@ A plasma not-open opening is one cause of stranded oxide. The second is a column
 
 ### 4.6.1 A Bounding Estimate
 
-The lower limit on opening width is access: the door after coatings (Section 1.2.3), and the minimum of 40 nm at the middle support. The upper limit is set by the ligaments between openings. After the dip-out each support is a perforated sheet in tension. A bounding estimate assumes the film keeps its deposition stress of +250 MPa and concentrates it into the net section between openings:
+The lower limit on opening width is access: the free area of the clover (Section 1.2.3), and the minimum of 40 nm at the middle support (free area 829 nm²). The upper limit is set by the ligaments between openings. After the dip-out each support is a perforated sheet in tension. A bounding estimate assumes the film keeps its deposition stress of +250 MPa and concentrates it into the net section between openings:
 
 ```
 Net-section stress between neighbouring openings (top support):
@@ -267,7 +267,7 @@ This is an upper bound: the pillars, bonded to the sheet and anchored at the bot
 
 ```
 Opening CD at the top-support top (reference, 3σ):
-  Lower limit   ≈ 47 nm   door after coatings (Section 1.2.3), HF access
+  Lower limit   ≈ 47 nm   HF access and free area (Section 1.2.3); gives ≥ 41 nm at the middle support
   Target        50 nm     (± 2.5 nm litho + ± 1.0 nm etch bias, root sum of squares: ± 2.7 nm)
   Upper limit   ≈ 53 nm   ligament fracture margin (Section 4.6.1); overlap depth
                           at 3σ (Section 4.3.2) already at the 20 nm limit
@@ -284,8 +284,8 @@ Rule                                                     Source
 ─────────────────────────────────────────────────────────────────────────────────────
 1. Place openings on interstitial sites                  minimum TiN exposure
 2. Keep the overlap depth at 3σ ≤ 20 nm                  TiN budget; collar
-3. Keep opening CD between 47 and 53 nm at the top       door; ligament fracture
-4. Keep the middle-support opening ≥ 40 nm               plate-fill door; HF access
+3. Keep opening CD between 47 and 53 nm at the top       access; ligament fracture
+4. Keep the middle-support opening ≥ 40 nm               free area ≥ 830 nm²; HF and ALD access
 5. Size the dip for the cluster you expect, not the      reach table (§4.4.3)
    one you hope for; tolerance costs 0.25 nm per 15 s
 6. Specify killer-defect density, not opening yield      correlated failures (§4.5)
@@ -297,7 +297,7 @@ Rule                                                     Source
 
 ## Summary and Key Takeaways
 
-1. **The lattice is a design object with a six-nanometre window.** CD from 47 to 53 nm at the top: door below, ligament fracture above.
+1. **The lattice is a design object with a six-nanometre window.** CD from 47 to 53 nm at the top: access below, ligament fracture above.
 
 2. **A single failed opening is forgiven; a triangle is not, at the reference dip.** The largest empty circle grows from 52 nm (intact) to 90 nm (one, two, or three in a line) to 104 nm (triangle), against a reach of 95 nm at 105 s.
 

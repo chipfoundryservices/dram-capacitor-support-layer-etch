@@ -12,7 +12,7 @@ This chapter asks what each can do and how far it can reach. The answer is the c
 - Describe remote-plasma NF₃ etching of SiN and its fluorination of TiN
 - Describe plasma ALE of SiN and its selectivity to TiN
 - Evaluate a hot-phosphoric-acid finish with its trim, TiN, and wetting costs
-- Match each tool to the job (trim, skin, sliver, door width) and the layer it can reach
+- Match each tool to the job (trim, skin, sliver, free area) and the layer it can reach
 
 ---
 
@@ -24,7 +24,7 @@ Job                             Where              Size of the task
 Trim the opening wider          top support wall   +1.5 nm per side (CD 50 → 53)
 Remove the damaged wall skin    top and mid walls  1–2 nm of H-depleted, F, C-bearing nitride
 Remove a nitride sliver         mid-support floor  up to 3 nm wide, in the crescent corners
-Widen the middle-support door   mid support wall   +1–2 nm per side to reach 40 nm
+Widen the middle-support opening mid support wall   +1–2 nm per side to reach 40 nm
 Remove polymer                  every surface      Ch. 9 (not a nitride etch)
 ```
 
@@ -144,7 +144,7 @@ ALE is the right tool for the top support, and a rework tool at the middle suppo
 
 ### 7.3.3 In S2
 
-In S2 the middle support is opened from above through the top-support stencil, in a free cavity of 635 nm. The acceptance angle is atan(25/635) = 2.25°, and the fraction at 35 eV is 23% instead of 14%. That is better, and still too slow for the opening itself (a 50 nm film in 100 cycles of 15.6 s is 26 minutes). The opening in S2 is made by the ion-driven HFC step at 400 eV, with 95% transmission, and ALE appears as a possible finish.
+In S2 the middle support is opened from above through the top-support stencil, in a free cavity of 650 nm. The acceptance angle is atan(25/650) = 2.2°, and the fraction at 35 eV is 23% instead of 14%. That is better, and still too slow for the opening itself (a 50 nm film in 100 cycles of 15.6 s is 26 minutes). The opening in S2 is made by the ion-driven HFC step at 400 eV, with 95% transmission, and ALE appears as a possible finish.
 
 ---
 
@@ -181,7 +181,7 @@ Unlike radicals, a liquid reaches everything it wets, so the dose at the middle 
 ## 7.5 Which Tool for Which Job
 
 ```
-Tool                  Reach              Trim top   Skin     Sliver at     Door at     TiN effect
+Tool                  Reach              Trim top   Skin     Sliver at     Widen mid   TiN effect
                                          support    (walls)  mid support   mid support
 ────────────────────────────────────────────────────────────────────────────────────────────────────
 Remote NF₃ radicals   top 150–350 nm     ✔  9 s     ✔        ✘ (12% dose)  ✘           1.5 nm F skin
@@ -244,7 +244,7 @@ Wet processor:       single-wafer H₃PO₄ at 160 °C (≥ 45 s overhead for he
 
 5. A hot-H₃PO₄ rework removes 3 nm from every nitride face. By how much does the opening grow, and where in the ligament margin table of Chapter 4 does that leave the lattice? What does it cost in TiN?
 
-6. Choose a finishing tool for each of: a lot with a 2 nm skin on the top-support wall; a lot with slivers in 1 in 10⁶ middle-support openings; a lot whose middle-support door is 38 nm instead of 40 nm. Justify with the table of Section 7.5.
+6. Choose a finishing tool for each of: a lot with a 2 nm skin on the top-support wall; a lot with slivers in 1 in 10⁶ middle-support openings; a lot whose middle-support opening is 38 nm instead of 40 nm. Justify with the table of Section 7.5.
 
 ---
 
