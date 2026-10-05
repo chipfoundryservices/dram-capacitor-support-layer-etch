@@ -130,7 +130,7 @@ The whiskers are a source of particles. A whisker 0.5 nm wide and 15 nm tall bre
 ## 12.4 Choosing the Overetch
 
 ```
-Overetch trade (SN2 at 159 nm/min, as in S2, where SN2 carries its own overetch; illustrative):
+Overetch trade (SN2 at 159 nm/min, PECVD nitride in S2, where SN2 carries its own overetch; for SiCN at 600 eV multiply the times by 1.43; illustrative):
   OE     SN2 total   Δ time vs 40%   Sliver w   99.9th     Extra ACL    Extra BPSG   Extra TiN
          (s)                                    percentile (nm)         (nm)         (nm)
   25%    23.6        −2.8            3.7 nm     5.1 nm     —            —            —       fails the 4 nm limit

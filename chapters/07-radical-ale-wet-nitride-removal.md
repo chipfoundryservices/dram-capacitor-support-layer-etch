@@ -144,7 +144,7 @@ ALE is the right tool for the top support, and a rework tool at the middle suppo
 
 ### 7.3.3 In S2
 
-In S2 the middle support is opened from above through the top-support stencil, in a free cavity of 650 nm. The acceptance angle is atan(25/650) = 2.2°, and the fraction at 35 eV is 23% instead of 14%. That is better, and still too slow for the opening itself (a 50 nm film in 100 cycles of 15.6 s is 26 minutes). The opening in S2 is made by the ion-driven HFC step at 400 eV, with 95% transmission, and ALE appears as a possible finish.
+In S2 the middle support is opened from above through the top-support stencil, in a free cavity of 650 nm. The acceptance angle is atan(25/650) = 2.2°, and the fraction at 35 eV is 23% instead of 14%. That is better, and still too slow for the opening itself (a 50 nm film in 100 cycles of 15.6 s is 26 minutes). The opening in S2 is made by the ion-driven HFC step, at 600 eV (Chapter 10) with 99% of the ions reaching the middle support, and ALE appears as a possible finish.
 
 ---
 

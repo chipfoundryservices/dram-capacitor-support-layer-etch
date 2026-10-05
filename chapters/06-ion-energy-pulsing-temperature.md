@@ -40,7 +40,7 @@ The last row decides between routes (Chapter 14): S0 and S1 each have four plasm
 
 ### 6.2.1 What It Does to the Nitride Steps
 
-The nitride steps are run with a narrow distribution at mean energy E (± 15%), with a 4 s flash, and the times scaled to clear the same nitride:
+The nitride steps are modelled with a 4 s flash and a distribution of ± 15% about the mean energy E (the result is the same for the ± 50% distribution of the sinusoidal bias to within 1.5%), with the times scaled to clear the same nitride:
 
 ```
 Mean ion energy sweep (SN steps, S1 with 4 s flash; illustrative):

@@ -190,7 +190,7 @@ The fault conditions matter more than the nominal ones. An endpoint that occurs 
 
 ## 8.8 In S2
 
-In S2 the SN2 etch is done in a free cavity. The CN signal is the same, the CO signal from oxide walls is absent (the oxide is gone), and the signal to monitor for the arrival at BPSG is the F/Ar and SiF emission from the BPSG. The cavity has no memory of OX polymer (Chapter 5), so the flash is repeatable and the SN2 start is clean. The overetch of 40% is carried by SN2 itself (26 s). The tools and the logic are the same.
+In S2 the SN2 etch is done in a free cavity. The CN signal is the same, the CO signal from oxide walls is absent (the oxide is gone), and the signal to monitor for the arrival at BPSG is the F/Ar and SiF emission from the BPSG. The cavity has no memory of OX polymer (Chapter 5), so the flash is repeatable and the SN2 start is clean. The overetch of 40% is carried by SN2 itself (26 s for PECVD nitride at 400 eV; 38 s for SiCN at 600 eV). The tools and the logic are the same.
 
 ---
 

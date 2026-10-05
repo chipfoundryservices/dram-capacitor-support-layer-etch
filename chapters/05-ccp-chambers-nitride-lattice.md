@@ -22,7 +22,7 @@ The chapter ends with the chamber's contribution to wafer-level uniformity, whic
 Support layer etch, chamber requirements (reference; S1):
 
                            OX step               SN1, SN2 (nitride)        FLASH
-  Ion energy               600 eV, broad OK      400 eV, narrow ± 15%      none (bias off)
+  Ion energy               600 eV, broad OK      400 eV, ± 50% (sinusoidal) none (bias off)
   Polymer on TiN           ≥ 3 nm self-limiting  set by gas to 3.4 nm      build 1.6 nm in 4 s
   Switching in/out         ≥ 3 s gas settle      ≤ 2 s gas settle          ≤ 1 s, bias fully off
   Wafer temperature        ± 2 K                 ± 1 K                     ± 1 K

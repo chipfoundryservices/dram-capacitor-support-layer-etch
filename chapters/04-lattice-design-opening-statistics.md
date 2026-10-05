@@ -112,7 +112,7 @@ Overlap depth into the nearest pillar:  15 + δ + ΔCD/2   (nm)
   Overlap depth at 3σ          15 + 5.15 = 20.2 nm      (specification: ≤ 20 nm)
 ```
 
-At 3σ the reference sits on its limit. Every nanometre of overlap depth is crescent area exposed to the plasma and nitride removed from one side of the pillar's support collar, so the margin on this line is the margin on both the TiN budget (Chapter 11) and the collar (Chapter 14).
+At 3σ the reference sits on its limit. Every nanometre of overlap depth is crescent area exposed to the plasma and nitride removed from one side of the pillar's support collar, so the margin on this line is the margin on both the TiN budget (Chapter 11) and the collar (Book #30, Chapter 11).
 
 ---
 

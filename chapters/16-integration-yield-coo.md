@@ -183,7 +183,7 @@ S2's gains are in TiN loss (3.2 → 1.3–1.8 nm), junction stress (0.5 times th
 
 ```
 Value of S2's gains in yield (illustrative):
-  TiN and seam weak cells: 14 → 5 per die        repairable: no yield change
+  TiN and seam weak cells: 14 → 4.4 (S2D) or 2.3 (S2A) per die   repairable: no yield change
   Junction-stress retention tail                  not quantified; unlikely above 0.05%
   Cluster tolerance (vertical HF path)            helps only wetting clusters (2 × 10⁻¹⁰ per die at φ = 0.21): none
   Mask margin                                     no yield value while the mask closes

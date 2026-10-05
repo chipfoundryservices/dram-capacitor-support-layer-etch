@@ -258,7 +258,7 @@ Effect of the support family on route S1 and S2 (illustrative):
   SiON               4.38     7.6       22     11     0.62      221     71
 ```
 
-In S1, with a 300 nm ACL, **neither SiCN nor SiBN fits the mask budget**: the nitride steps take 1.8 and 2.2 times as long, and the carbon mask erodes during them. In S2, where the oxide step is gone and the ACL is only 160 nm, SiCN just fits (163 nm used, so an ACL of 200 nm in practice) and SiBN needs about 200 nm. This is the opening move of the S2 argument of Chapter 14: a route that removes the oxide plasma step can afford a support that resists the longer HF dip of the sequential scheme.
+In S1, with a 300 nm ACL, **neither SiCN nor SiBN fits the mask budget**: the nitride steps take 1.8 and 2.2 times as long, and the carbon mask erodes during them. In S2, where the oxide step is gone, the mask need not be 300 nm: with PECVD nitride it is 160 nm, and with SiCN (163 nm used) an ACL of 220 nm leaves a margin of 57 nm; SiBN (193 nm used) needs about 250 nm. This is the opening move of the S2 argument of Chapter 14: a route that removes the oxide plasma step can afford a support that resists the longer HF dip of the sequential scheme.
 
 ### 2.5.4 Mechanics
 

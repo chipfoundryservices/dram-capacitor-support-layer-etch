@@ -42,7 +42,8 @@ From Chapters 3 and 5:
 TiN pillar-top loss (crescent centre):
   S0   (no flash; 2.36 nm in SN1 + SN2, 2.5 nm in OX + LAND)     ≈ 5.0 nm
   S1   (4 s flash; 0.97 nm in SN, 2.25 nm in OX + LAND)          ≈ 3.2 nm
-  S2   (4 s flash; 0.97 nm in SN, no OX or LAND)                 ≈ 1.0 nm
+  S2   (4 s flash; 0.97 nm in SN, no OX or LAND; PECVD nitride)  ≈ 1.0 nm
+       with SiCN supports (Ch. 14): S2D 1.8 nm; S2A 1.3 nm
 ```
 
 ---
@@ -175,7 +176,7 @@ Seam and top-loss weak cells per die (illustrative):
   S2        1.0 nm      2.4 nm        0.037                  1.3
 ```
 
-Another 1–3 cells per die can be added for fluorine-delayed ZAZ in each route, a number small against the repair resource of a few thousand cells and not zero. The relevant figure is not the count but where they lie.
+With the SiCN supports that S2 needs (Chapter 14), the slot depths are 4.5 nm (S2D, 1.8 nm of loss) and 3.3 nm (S2A, 1.3 nm), giving 4.4 and 2.3 cells per die. Another 1–3 cells per die can be added for fluorine-delayed ZAZ in each route, a number small against the repair resource of a few thousand cells and not zero. The relevant figure is not the count but where they lie.
 
 ---
 
