@@ -242,35 +242,40 @@ A plasma not-open opening is one cause of stranded oxide. The second is a column
 
 The lower limit on opening width is access: the free area of the clover (Section 1.2.3), and the minimum of 40 nm at the middle support (free area 829 nm²). The upper limit is set by the ligaments between openings. After the dip-out each support is a perforated sheet in tension. A bounding estimate assumes the film keeps its deposition stress of +250 MPa and concentrates it into the net section between openings:
 
+The stress is carried by the sheet after the dip-out, so it is the opening CD **after the dip-out** that counts. The HF removes 1.75 nm from each wall of the top support in the reference dip (Chapter 2), so the final CD is the etched CD plus 3.6 nm (1.8 nm per wall).
+
 ```
-Net-section stress between neighbouring openings (top support):
-  Ligament width            P − D = 90 − 50 = 40 nm
-  Net stress                σ_net = σ × P/(P − D) = 250 × 90/40 = 562 MPa
-  Hole concentration        K_hole ≈ 2 (equibiaxial tension around a circular hole)
-  Edge roughness            K_rough ≈ 1 + 2√(a/ρ) = 2.4  (a = 1.5 nm deep, ρ = 3 nm tip radius)
-  Peak stress at the edge   562 × 2 × 2.4 ≈ 2.7 GPa
+Net-section stress between neighbouring openings (top support, etched CD 50 nm):
+  Final CD after the dip-out   50 + 3.6 = 53.6 nm
+  Ligament width               P − D = 90 − 53.6 = 36.4 nm
+  Net stress                   σ_net = σ × P/(P − D) = 250 × 90/36.4 = 618 MPa
+  Hole concentration           K_hole ≈ 2 (equibiaxial tension around a circular hole)
+  Edge roughness               K_rough ≈ 1 + 2√(a/ρ) = 2.4  (a = 1.5 nm deep, ρ = 3 nm tip radius)
+  Peak stress at the edge      618 × 2 × 2.4 ≈ 3.0 GPa
 
   Fracture strength of H-rich PECVD SiN (thin film)   ≈ 3–4 GPa
 ```
 
 ```
-Opening CD (nm)   Ligament (nm)   σ_net (MPa)   Peak (GPa)   Margin to 3.5 GPa
-  50              40              562           2.7          1.3
-  53              37              608           2.9          1.2
-  55              35              643           3.1          1.1
-  56              34              662           3.2          1.1
+Etched CD   Final CD     Ligament   σ_net    Peak     Margin to 3.5 GPa
+(nm)        after dip    (nm)       (MPa)    (GPa)
+  47        50.6         39.4       571      2.74     1.28
+  50        53.6         36.4       618      2.97     1.18     ← reference
+  52.7      56.3         33.7       668      3.21     1.09     ← reference at +3σ
+  53        56.6         33.4       674      3.23     1.08
+  55.5      59.1         30.9       729      3.50     1.00     ← fracture limit
 ```
 
-This is an upper bound: the pillars, bonded to the sheet and anchored at the bottom stop, share the load, and the sheet relaxes where it is free. It is nevertheless informative. The margin falls below 1.2 for CDs above 53 nm, and *edge roughness is a multiplier of the same size as the hole itself*. A support whose openings print 5 nm too large and etch with 3 nm of striation is a cracked support. Book #30 (Chapter 11) treats the lattice-level failure; this book controls the two inputs, CD and edge roughness, from the etch side (Chapter 10).
+This is an upper bound: the pillars, bonded to the sheet and anchored at the bottom stop, share the load, and the sheet relaxes where it is free. It is nevertheless informative. The margin falls to 1.08 at the upper edge of the design window and to 1.0 at an etched CD of 55.5 nm, and *edge roughness is a multiplier of the same size as the hole itself*. A support whose openings print 5 nm too large and etch with 3 nm of striation is a cracked support. Book #30 (Chapter 11) treats the lattice-level failure; this book controls the two inputs, CD and edge roughness, from the etch side (Chapter 10).
 
 ### 4.6.2 The Design Window
 
 ```
-Opening CD at the top-support top (reference, 3σ):
+Etched opening CD at the top-support top (reference, 3σ):
   Lower limit   ≈ 47 nm   HF access and free area (Section 1.2.3); gives ≥ 41 nm at the middle support
   Target        50 nm     (± 2.5 nm litho + ± 1.0 nm etch bias, root sum of squares: ± 2.7 nm)
-  Upper limit   ≈ 53 nm   ligament fracture margin (Section 4.6.1); overlap depth
-                          at 3σ (Section 4.3.2) already at the 20 nm limit
+  Upper limit   ≈ 53 nm   etched CD; ligament margin 1.08 after the dip-out (Section 4.6.1,
+                          1.0 at 55.5 nm); overlap depth at 3σ (Section 4.3.2) already at 20 nm
 ```
 
 The window is 6 nm wide, and the process uses ± 2.7 nm of it. There is no room for a second error source.
@@ -309,7 +314,7 @@ Rule                                                     Source
 
 6. **S2 reverses the sensitivity.** Vertical HF paths add 2% for a hexagon of failures.
 
-7. **Edge roughness multiplies the stress.** A 1.5 nm notch costs a factor of 2.4 at the hole edge; at CD 55 nm the fracture margin is 1.1.
+7. **Edge roughness multiplies the stress.** A 1.5 nm notch costs a factor of 2.4 at the hole edge; the fracture margin is 1.18 at the reference and 1.0 at an etched CD of 55.5 nm (59.1 nm after the dip-out).
 
 ---
 
@@ -325,7 +330,7 @@ Rule                                                     Source
 
 5. A lot shows a killer-particle density of 0.04/cm² on the patterned ACL. What is the yield loss? If the cause is a particle population with diameters distributed as D⁻³ above 100 nm, what fraction of the particles above 100 nm is above 154 nm?
 
-6. Using the stress model of Section 4.6.1, find the opening CD at which the peak stress reaches 3.5 GPa for edge roughness of K_rough = 2.4, and the CD for K_rough = 3.0. What does that say about the value of an etch step that smooths the opening edge by 1 nm?
+6. Using the stress model of Section 4.6.1, find the opening CD after the dip-out at which the peak stress reaches 3.5 GPa for edge roughness of K_rough = 2.4, and the CD for K_rough = 3.0. Convert both to etched CDs. What does that say about the value of an etch step that smooths the opening edge by 1 nm?
 
 ---
 

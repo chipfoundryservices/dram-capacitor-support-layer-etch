@@ -133,7 +133,7 @@ Roughness transfer (3σ amplitude, illustrative):
   SN2                          × 0.9    → 1.4 nm on the middle-support wall
 ```
 
-The top-support wall, the one that carries the net-section stress, is left with 1.5 nm of roughness. That is the value used for the edge-roughness concentration in Chapter 4 (K_rough = 2.4 for a 1.5 nm notch with a 3 nm tip radius). A change from 1.5 to 2.0 nm of amplitude, with the same tip radius, raises K_rough to 2.6 and moves the CD at which the margin reaches 1.0 from 59 nm to 57 nm (Chapter 4, Question 6).
+The top-support wall, the one that carries the net-section stress, is left with 1.5 nm of roughness. That is the value used for the edge-roughness concentration in Chapter 4 (K_rough = 2.4 for a 1.5 nm notch with a 3 nm tip radius). A change from 1.5 to 2.0 nm of amplitude, with the same tip radius, raises K_rough to 2.6 and moves the CD after the dip-out at which the margin reaches 1.0 from 59 nm to 57 nm (Chapter 4, Question 6).
 
 ### 10.4.2 The Role of the Flash
 

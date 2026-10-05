@@ -195,7 +195,7 @@ S2 variants:                     S2A (layout A, 16% flux)     S2D (layout D, ful
   Solid fraction (top support)   39%                          34%
 ```
 
-S2D is the more robust and the more expensive route; S2A is the route available to a fab with single-exposure ArF immersion.
+S2D is the more robust and the more expensive route; S2A is the route available to a fab with single-exposure ArF immersion. (The times in this section are for PECVD nitride supports with SN2 at 400 eV. Chapter 14 revises them for the full S2, which uses SiCN supports and an SN2 at 600 eV: 118 s for S2D and 183 s for S2A.)
 
 ### 13.5.3 What Does Not Work
 
