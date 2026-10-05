@@ -190,7 +190,7 @@ Incoming surface (reference):
                                  (a few nm deep) in 10% (Book #30, Chapter 2)
 ```
 
-The damaged skin on the nitride matters in two ways. First, it etches at an uncontrolled rate in the first seconds, which is part of why a **breakthrough** step (a few seconds of CF₄/Ar) is placed ahead of SN1. Second, it is hydrophilic and holds water: on a nitride that has queued in air, the first plasma seconds see outgassing water, which scavenges fluorine and thins the polymer.
+The damaged skin on the nitride matters in two ways. First, it etches at an uncontrolled rate in the first seconds. A conventional **breakthrough** (a few seconds of CF₄/Ar at full bias) is not an option here: on bare TiN it would cost 23 nm/min × 4 s/60 = 1.5 nm of pillar top (Chapter 3). The polymer flash of S1 precedes SN1 instead, and SN1 cuts the skin under a protective film. Second, it is hydrophilic and holds water: on a nitride that has queued in air, the first plasma seconds see outgassing water, which scavenges fluorine and thins the polymer.
 
 ### 2.4.2 The ACL and What It Leaves
 

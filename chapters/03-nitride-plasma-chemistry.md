@@ -186,7 +186,7 @@ Steady-state rates and SiN:TiN versus mean ion energy (d₀ = 3.4 nm, continuous
 Two conclusions:
 
 1. **Energy is a weak lever.** Halving the mean energy from 400 to 200 eV raises the steady SiN:TiN by 16% (294 to 341) and costs 36% of the SiN rate. Going to 100 eV gains 60% in selectivity at a loss of 61% of the rate.
-2. **The width of the distribution does not matter for TiN.** The TiN threshold (45 eV) lies below the whole range of ion energies in this process, so tails above the mean do not add disproportionately to TiN loss. A tailored waveform with a narrow distribution gives the same selectivity as a broad one. Its benefit lies elsewhere: charging and profile control (Chapters 6 and 13), and a lower erosion rate of the carbon mask at its facets.
+2. **The width of the distribution does not matter for TiN.** The TiN threshold (45 eV) lies below the whole range of ion energies in this process, so tails above the mean do not add disproportionately to TiN loss. A tailored waveform with a narrow distribution gives the same selectivity as a broad one. Its benefit lies elsewhere: a smaller voltage swing on the floating pillars (Chapters 6 and 13).
 
 This is a result of the model's threshold assumptions. A TiN with a higher effective threshold (heavily fluorinated, 80–100 eV) would make the energy lever steeper, and Chapter 6 treats the uncertainty.
 
